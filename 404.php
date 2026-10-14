@@ -182,6 +182,8 @@ if (!headers_sent() && http_response_code() !== 404) {
                         <button type="button" class="frb-dropdown-toggle" aria-expanded="false" aria-label="Toggle Services menu"><i class="fa-solid fa-chevron-down"></i></button>
                         <ul class="frb-dropdown-menu">
                             <li><a href="/commercial-fridge-repair-blacktown/">Commercial Fridge Repair</a></li>
+                            <li><a href="/residential-fridge-repair/">Residential Fridge Repair</a></li>
+                            <li><a href="/fridge-not-cooling-repair/">Fridge Not Cooling Repair</a></li>
                             <li><a href="/freezer-repair-blacktown/">Freezer Repair</a></li>
                             <li><a href="/emergency-fridge-repair/">Emergency Fridge Repair</a></li>
                             <li><a href="/#services">View All Services</a></li>
@@ -227,7 +229,7 @@ if (!headers_sent() && http_response_code() !== 404) {
             <div class="frb-footer-col">
                 <h4>Our Services</h4>
                 <ul>
-                    <li><a href="/#services">Home Fridge Repairs</a></li>
+                    <li><a href="/residential-fridge-repair/">Home Fridge Repairs</a></li>
                     <li><a href="/commercial-fridge-repair-blacktown/">Commercial Fridge Repairs</a></li>
                     <li><a href="/freezer-repair-blacktown/">Freezer Repairs</a></li>
                     <li><a href="/#services">Coolroom Repairs</a></li>

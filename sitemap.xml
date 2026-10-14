@@ -26,6 +26,16 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://fridgerepairblacktown.com.au/residential-fridge-repair/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fridgerepairblacktown.com.au/fridge-not-cooling-repair/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://fridgerepairblacktown.com.au/emergency-fridge-repair/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

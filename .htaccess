@@ -21,6 +21,12 @@ RewriteRule ^commercial-fridge-repair-blacktown/?$ commercial-fridge-repair-blac
 # Allow the Freezer Repair landing page to work without .html extension
 RewriteRule ^freezer-repair-blacktown/?$ freezer-repair-blacktown.html [L]
 
+# Allow the Residential Fridge Repair landing page to work without .html extension
+RewriteRule ^residential-fridge-repair/?$ residential-fridge-repair.html [L]
+
+# Allow the Fridge Not Cooling Repair landing page to work without .html extension
+RewriteRule ^fridge-not-cooling-repair/?$ fridge-not-cooling-repair.html [L]
+
 # Allow the Emergency Fridge Repair landing page to work without .html extension
 RewriteRule ^emergency-fridge-repair/?$ emergency-fridge-repair.html [L]
 
