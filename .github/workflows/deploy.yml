@@ -3,7 +3,7 @@ name: Deploy to Hostinger (FTP)
 on:
   push:
     branches:
-      - claude/why-choose-us-fridge-content-zuo3z0
+      - Main
   workflow_dispatch:
 
 jobs:
