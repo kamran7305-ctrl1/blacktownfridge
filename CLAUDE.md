@@ -72,14 +72,14 @@ Built and waiting to be pushed (the owner has the files; check whether they exis
 - `/fridge-not-cooling-repair/` (`fridge-not-cooling-repair.html`)
 - `/fridge-regas/` (`fridge-regas.html`)
 
-Still to build from the 2 month SEO plan (13 core pages in total):
+Still to build (the full 58 new page plan and publish order is in section 13, which overrides this short list):
 - Contact page (separate page; the homepage has a contact form section)
 - Coolroom repair
 - Fridge leaking water (fault page)
 - Freezer not freezing (fault page)
 - Brands hub `/brands-we-repair/` (one H2 per brand)
 - Blog: update the 2 existing posts, then 4 new posts (weeks 3, 5, 6, 8) and a backlog of 8 more.
-- There are **no suburb pages**. Suburbs live in the "Areas we service" sections, the Contact page and the Google Business Profile. Do not create suburb landing pages.
+- Suburb pages ARE planned (40, see section 13). Build them only from the suburb plan and only with unique local content.
 
 Internal link targets (use these exact paths): `/`, `/#contact-form`, `/#services`, `/#brands`, `/about-us/`, `/blog/`, `/residential-fridge-repair/`, `/fridge-not-cooling-repair/`, `/fridge-regas/`, `/freezer-repair-blacktown/`, `/commercial-fridge-repair-blacktown/`, `/emergency-fridge-repair/`.
 
@@ -151,7 +151,7 @@ Every page carries the same inline `<style>` block from `index.html` (global `fr
 
 ## 11. Project documents (in the Claude project "fridgerepairblacktown.com.au")
 
-- `claude/seo-strategy-2-months-summary.md`: the lean 2 month plan (13 pages, blog schedule, no suburb pages).
+- `claude/seo-strategy-2-months-summary.md`: the older lean 2 month plan. SUPERSEDED by section 13 (it said no suburb pages).
 - `claude/keyword-list-v1.csv`: 558 keywords in 11 clusters (the owner is running them through Semrush AU).
 - `claude/competitor-analysis-summary.md`: top 10 competitors and the gaps listed above.
 - Page briefs already written as Word files for the owner: commercial, emergency, freezer, residential, fridge not cooling, fridge regas, homepage, about, contact and blog posts.
@@ -162,3 +162,30 @@ Every page carries the same inline `<style>` block from `index.html` (global `fr
 - Replies: short, plain English, results first. "Today's task" summaries are 2 to 3 short bullets, one point per task or page.
 - If a push fails with a 403 from the git proxy, do not look for a workaround. Give the owner a zip of the changed files and ask them to authorise the repo.
 - Never use `pkill -f` with a pattern that matches your own shell.
+
+## 13. Semrush keyword strategy v2 (16 Oct 2026): follow this for all page work
+
+Source files are in the repo at `.github/seo/` (not deployed to the website): `SEO_Keyword_Strategy_Semrush_v2.xlsx` plus CSV exports `page-map.csv`, `suburb-pages.csv`, `keywords.csv`, `action-plan.csv`. Read the matching row before working on any page. This section overrides the older "no suburb pages" plan.
+
+**How to work, one page at a time, in the order of the Page Map and the 8-Week Action Plan (starts Mon 19 Oct 2026):**
+1. Find the page's row in `page-map.csv`: status (EXISTING - optimise, or NEW), URL, primary keyword, secondary keywords, title tag, H1, word count.
+2. EXISTING page: update it in place (title, meta description, H1, copy, FAQ, internal links, schema). NEW page: build it from the template method in section 5.
+3. **Every page gets its own unique content, unique meta title and unique meta description.** Never reuse or lightly reword another page's copy or meta. Use the sheet's title and H1 as the starting point, check the length (title 60 characters or fewer, description about 150 to 160) and make sure no two pages share a title or description.
+4. **Schema on every page, always** (WebPage, HVACBusiness, Service with the $69 AUD Offer, BreadcrumbList, FAQPage; BlogPosting for blog posts). FAQ schema must match the visible FAQs word for word. Validate the JSON before pushing.
+5. Add the page to `.htaccess`, `sitemap.xml`, the Services dropdown and footer on every page, as in sections 8 and 9. Branch and PR rules in section 2 apply.
+
+**Page types in the plan (58 new pages):** service pages (ice machine, coolroom, mobile fridge repair, fridge repair cost, compressor, door seal, display fridge, bar fridge, Sydney hub), brand pages (Fisher & Paykel is the biggest opportunity at about 3,600 searches a month, then Westinghouse, LG, Samsung, Electrolux, Miele, Smeg), a `/service-areas/` hub, a Contact page, and suburb pages.
+Do not claim "authorised service agent" for any brand unless the owner confirms it. Do not invent prices; the `/fridge-repair-cost/` page waits for real prices from the owner.
+
+**Suburb pages (40, tiers 1 to 3 plus Extended, URL `/fridge-repair-<suburb>/`):** use `suburb-pages.csv` for URL, postcode and publish week. Each page needs:
+- real suburb details (postcode, 3 to 5 nearby streets, landmarks or shopping centre, typical local housing), from the owner's real jobs, not guesses; ask the owner for anything you cannot verify
+- at least 2 real jobs done in that suburb (fault, brand, fix) and a local photo with the suburb in the alt text, plus a real review when available
+- its own 3 to 5 FAQs that differ per suburb (travel time, same-day availability, call-out fee, common brands there), a map, and the booking form above the fold
+- internal links to the 3 most relevant service pages, 2 brand pages, `/service-areas/` and 2 neighbouring suburb pages; link it from `/service-areas/` and the homepage areas section
+- never copy a page and swap the suburb name; no thin or doorway pages. After 8 weeks, merge or noindex any suburb page with zero Search Console impressions.
+- Extended suburbs (Penrith, Parramatta, Castle Hill, Richmond, Campbelltown, Bankstown, Bossley Park, St Marys, Smithfield) go live only after the owner confirms the business services them.
+- Build the suburb template and one data sheet per suburb first (week 1 task), then publish by tier and week.
+
+**Honesty and data limits:** volumes are Semrush AU estimates, desktop, directional only. Validate with Google Search Console after 4 to 6 weeks. Most Blacktown suburbs show under 10 searches a month; they are built for local relevance and Map Pack proximity.
+
+**Homepage status:** page 1 (`/`) was optimised on 16 Oct 2026 (title, H1, WebPage and Service schema added, placeholders and unverified reviews removed). Next in line: `/commercial-fridge-repair-blacktown/`, `/residential-fridge-repair/`, `/fisher-paykel-fridge-repair/`, `/emergency-fridge-repair/`.
