@@ -27,6 +27,9 @@ RewriteRule ^residential-fridge-repair/?$ residential-fridge-repair.html [L]
 # Allow the Fridge Not Cooling Repair landing page to work without .html extension
 RewriteRule ^fridge-not-cooling-repair/?$ fridge-not-cooling-repair.html [L]
 
+# Allow the Fridge Regas landing page to work without .html extension
+RewriteRule ^fridge-regas/?$ fridge-regas.html [L]
+
 # Allow the Emergency Fridge Repair landing page to work without .html extension
 RewriteRule ^emergency-fridge-repair/?$ emergency-fridge-repair.html [L]
 
