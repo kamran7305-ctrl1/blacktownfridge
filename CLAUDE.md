@@ -12,8 +12,8 @@ Owner quick note (Roman Urdu): Claude Code ko sirf page ka naam, URL, primary ke
 - **Business:** Fridge Repairs Blacktown. A local fridge, freezer and coolroom repair business in Blacktown NSW 2148, servicing Western Sydney. Mobile service: technicians come to the customer's home or business.
 - **Goal of the site:** rank for fridge repair keywords in and around Blacktown and turn visitors into booking requests (form or email). The domain is exact-match for one suburb, so the site stays small, focused and locally deep.
 - **Confirmed business facts (use these, nothing else):**
-  - $69 call-out fee (covers the visit and diagnosis)
-  - 1 year warranty on parts and labour
+  - Call-out fee from $69 (covers the visit and diagnosis). Always write "from $69", never a flat "$69"
+  - Warranty of up to 12 months on parts and labour. Always write "up to 12 months", never "1 year"
   - Around 30 years of experience
   - Fully trained and licensed technicians, with public liability insurance
   - Senior discounts available
@@ -114,10 +114,10 @@ Every page carries the same inline `<style>` block from `index.html` (global `fr
 
 ## 7. Meta and schema
 
-- **Meta title:** 60 characters or fewer. Click-worthy: primary keyword, a benefit or differentiator, the $69 call-out. Example: `Fridge Regas Blacktown | Leak Found & Fixed | $69 Call-Out`. Count characters in code.
-- **Meta description:** about 150 to 160 characters. Primary keyword, benefit, $69 call-out or 1 year warranty, and a CTA ("Book now"). Count characters.
+- **Meta title:** 60 characters or fewer. Click-worthy: primary keyword, a benefit or differentiator, the $69 call-out. Example: `Fridge Regas Blacktown | Leak Found & Fixed | From $69`. Count characters in code.
+- **Meta description:** about 150 to 160 characters. Primary keyword, benefit, from $69 call-out or up to 12 months warranty, and a CTA ("Book now"). Count characters.
 - Also: `<link rel="canonical">` (absolute, trailing slash), `robots index, follow, max-image-preview:large`, favicon `/images/logo.webp`.
-- **JSON-LD** (one block in the head): `@graph` with `WebPage`, the site-wide `HVACBusiness` node (`@id` `https://fridgerepairblacktown.com.au/#organization`: name, url, logo, email, priceRange `$$`, areaServed, 24/7 openingHoursSpecification; **no telephone, no address, no geo, no rating**), `Service` (name, serviceType, provider by @id, areaServed, description, url, `Offer` with a $69 AUD `PriceSpecification`), `BreadcrumbList`, `FAQPage`. FAQ text in the schema must match the visible FAQs word for word. Easiest: copy the node and shapes from `freezer-repair-blacktown.html` and edit. Validate that the JSON parses. Blog posts get `BlogPosting` and `BreadcrumbList` automatically from `single-post.php`.
+- **JSON-LD** (one block in the head): `@graph` with `WebPage`, the site-wide `HVACBusiness` node (`@id` `https://fridgerepairblacktown.com.au/#organization`: name, url, logo, email, priceRange `$$`, areaServed, 24/7 openingHoursSpecification; **no telephone, no address, no geo, no rating**), `Service` (name, serviceType, provider by @id, areaServed, description, url, `Offer` with a $69 AUD `PriceSpecification` (describe it as "from $69")), `BreadcrumbList`, `FAQPage`. FAQ text in the schema must match the visible FAQs word for word. Easiest: copy the node and shapes from `freezer-repair-blacktown.html` and edit. Validate that the JSON parses. Blog posts get `BlogPosting` and `BreadcrumbList` automatically from `single-post.php`.
 - Do not add reviews or aggregate ratings until real reviews are shown on the page.
 
 ## 8. Internal linking and navigation
