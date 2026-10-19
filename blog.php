@@ -348,7 +348,7 @@ $posts = $pdo->query("SELECT * FROM blog_posts WHERE status = 'published' ORDER 
                         <li><a href="/#brands">LG</a></li>
                         <li><a href="/#brands">Samsung</a></li>
                         <li><a href="/#brands">Westinghouse</a></li>
-                        <li><a href="/#brands">Fisher & Paykel</a></li>
+                        <li><a href="/fisher-paykel-fridge-repair/">Fisher & Paykel</a></li>
                         <li><a href="/#brands">Electrolux</a></li>
                         <li><a href="/#brands">Bosch</a></li>
                     </ul>
