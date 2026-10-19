@@ -30,6 +30,9 @@ RewriteRule ^fridge-not-cooling-repair/?$ fridge-not-cooling-repair.html [L]
 # Allow the Fridge Regas landing page to work without .html extension
 RewriteRule ^fridge-regas/?$ fridge-regas.html [L]
 
+# Allow the Ice Machine Repair landing page to work without .html extension
+RewriteRule ^ice-machine-repair/?$ ice-machine-repair.html [L]
+
 # Allow the Fisher & Paykel Fridge Repair landing page to work without .html extension
 RewriteRule ^fisher-paykel-fridge-repair/?$ fisher-paykel-fridge-repair.html [L]
 
