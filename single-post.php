@@ -388,6 +388,7 @@ echo json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                             <li><a href="/residential-fridge-repair/">Residential Fridge Repair</a></li>
                             <li><a href="/fridge-not-cooling-repair/">Fridge Not Cooling Repair</a></li>
                             <li><a href="/fridge-regas/">Fridge Regas</a></li>
+                            <li><a href="/ice-machine-repair/">Ice Machine Repair</a></li>
                             <li><a href="/freezer-repair-blacktown/">Freezer Repair</a></li>
                             <li><a href="/emergency-fridge-repair/">Emergency Fridge Repair</a></li>
                             <li><a href="/#services">View All Services</a></li>
@@ -485,6 +486,7 @@ echo json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                     <li><a href="/freezer-repair-blacktown/">Freezer Repairs</a></li>
                     <li><a href="/#services">Coolroom Repairs</a></li>
                     <li><a href="/fridge-regas/">Fridge Regassing</a></li>
+                    <li><a href="/ice-machine-repair/">Ice Machine Repair</a></li>
                     <li><a href="/#services">Display Fridge Repairs</a></li>
                     <li><a href="/#services">Salad Bar Fridge Repairs</a></li>
                     <li><a href="/#services">Commercial Exhaust System Repairs</a></li>
@@ -499,7 +501,7 @@ echo json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                         <li><a href="/#brands">LG</a></li>
                         <li><a href="/#brands">Samsung</a></li>
                         <li><a href="/#brands">Westinghouse</a></li>
-                        <li><a href="/#brands">Fisher & Paykel</a></li>
+                        <li><a href="/fisher-paykel-fridge-repair/">Fisher & Paykel</a></li>
                         <li><a href="/#brands">Electrolux</a></li>
                         <li><a href="/#brands">Bosch</a></li>
                     </ul>
