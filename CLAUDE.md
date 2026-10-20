@@ -21,6 +21,7 @@ Owner quick note (Roman Urdu): Claude Code ko sirf page ka naam, URL, primary ke
   - Upfront quote before work starts; the customer approves the price first
   - Emergency service 24 hours, 7 days (nights, weekends, Sundays, public holidays)
   - Services: residential, commercial, emergency, freezer, coolroom, regas and compressor, fault diagnosis
+  - Owner confirmed on 20 Oct 2026 (safe to use in copy): we are an independent repairer, not a Fisher & Paykel service centre, and repair all Fisher & Paykel ranges listed on the brand page; we repair camping and 12V fridges; we repair ice machines and ice makers, including servicing; the call-out fee stays the same at any hour; we repair walk-in coolrooms and freezer rooms including compressors and condensing units, and offer coolroom maintenance schedules; commercial brands Skope, Bromic, Williams, Husky, True, Electrolux Professional and Westinghouse.
 - **Contact:** the booking form (`/#contact-form`, posts to `/send_mail.php`) and **info@fridgerepairblacktown.com.au**. There is no published phone number, street address, licence number, review count or rating. Do not invent any. Do not write `[PHONE]` or other placeholders on live pages.
 - **Never mention ARC or ARCtick.** Say "licensed" or "fully trained and licensed" only.
 
