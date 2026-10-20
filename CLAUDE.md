@@ -189,3 +189,21 @@ Do not claim "authorised service agent" for any brand unless the owner confirms 
 **Honesty and data limits:** volumes are Semrush AU estimates, desktop, directional only. Validate with Google Search Console after 4 to 6 weeks. Most Blacktown suburbs show under 10 searches a month; they are built for local relevance and Map Pack proximity.
 
 **Homepage status:** page 1 (`/`) was optimised on 16 Oct 2026 (title, H1, WebPage and Service schema added, placeholders and unverified reviews removed). Next in line: `/commercial-fridge-repair-blacktown/`, `/residential-fridge-repair/`, `/fisher-paykel-fridge-repair/`, `/emergency-fridge-repair/`.
+
+## 14. Competitor analysis and content playbook (20 Oct 2026): follow this together with section 13
+
+Full file: `.github/seo/Competitor_Analysis_and_Content_Playbook.md` (Part A analysis of fastfridgerepairs.com.au, Part B writing, linking and schema rules). Read Part B before writing or editing any page. Key rules adopted:
+
+- **Voice:** Australian English, answer first, short sentences, symptom to cause to what we check to fix to cost and time. Honest repair or replace advice. Avoid the words "genuinely", "honestly" and "straightforward", hedged filler, "100% guaranteed", "best price", exclamation marks and emoji.
+- **Local proof:** every page needs at least one thing the competitor lacks (price or time indicator, decision aid, real photo with descriptive alt text, named technician, or a local fact). Suburb pages need 5 verified local facts and no more than 30 percent text shared with other suburb pages.
+- **Meta:** title 60 characters or fewer (aim 52 to 58), primary keyword first, no emoji. Description 140 to 155 characters with a call to action.
+- **Headings:** one H1 with keyword and location, no skipped levels, FAQ questions are H3 under an H2.
+- **Links:** hub and spoke. Contextual links 5 to 10 per page with descriptive, varied anchors (no "click here"), no `#anchor` pseudo-links in menus or footers, no links to pages that do not exist, add each new page to the sitemap and navigation in one pass.
+- **Schema:** never use `Product` or `ItemPage` for services. Add `telephone`, address and `geo` only after the owner confirms them. Add `aggregateRating` or `review` only when real reviews are visible on the same page.
+- **Scope:** only fridges, freezers, coolrooms, display, prep and bar fridges, ice machines, regas, controllers and seals. No exhaust, air conditioning or washing machines.
+- **Missing facts:** never invent. List `[CONFIRM: ...]` items for the owner at the end of the reply, never inside published copy.
+- **Priority order for the next 30 days (playbook B11):** homepage basics, coolroom, commercial freezer and display fridge pages, regas rewrite with prices and freezer regas, suburb pages (Mount Druitt, Seven Hills, Quakers Hill, Rouse Hill, Rooty Hill, Doonside, Schofields, Parklea, Toongabbie, Glenwood) then the `/areas/` hub, brand pages (Samsung, LG, Westinghouse, upgrade Fisher & Paykel), then blog posts (leaking water, regas cost, upgrade the not-cooling post).
+
+**Where the playbook and this file differ, this file wins until the owner says otherwise:** the playbook allows naming ARCtick and a licence number, but section 1 says never mention ARC. The playbook says to confirm "30 years", "licensed" and "OEM parts" first; section 1 already lists years and licensed technicians as confirmed, so use them, and avoid claiming OEM or genuine parts.
+
+**Open owner items from the playbook:** phone number, ABN, licence number, street address or service-area setting, real reviews, named technicians, real job photos, and Google Business Profile details.
