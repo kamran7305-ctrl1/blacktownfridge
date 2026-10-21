@@ -250,7 +250,7 @@ if (!headers_sent() && http_response_code() !== 404) {
                 <div style="display: flex; flex-wrap: wrap; gap: 10px 40px;">
                     <ul style="flex: 1; min-width: 100px;">
                         <li><a href="/lg-fridge-repair/">LG</a></li>
-                        <li><a href="/#brands">Samsung</a></li>
+                        <li><a href="/samsung-fridge-repair/">Samsung</a></li>
                         <li><a href="/westinghouse-fridge-repair/">Westinghouse</a></li>
                         <li><a href="/fisher-paykel-fridge-repair/">Fisher & Paykel</a></li>
                         <li><a href="/#brands">Electrolux</a></li>
