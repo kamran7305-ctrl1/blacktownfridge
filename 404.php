@@ -251,7 +251,7 @@ if (!headers_sent() && http_response_code() !== 404) {
                     <ul style="flex: 1; min-width: 100px;">
                         <li><a href="/#brands">LG</a></li>
                         <li><a href="/#brands">Samsung</a></li>
-                        <li><a href="/#brands">Westinghouse</a></li>
+                        <li><a href="/westinghouse-fridge-repair/">Westinghouse</a></li>
                         <li><a href="/fisher-paykel-fridge-repair/">Fisher & Paykel</a></li>
                         <li><a href="/#brands">Electrolux</a></li>
                         <li><a href="/#brands">Bosch</a></li>
