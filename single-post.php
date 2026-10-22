@@ -505,7 +505,7 @@ echo json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                         <li><a href="/samsung-fridge-repair/">Samsung</a></li>
                         <li><a href="/westinghouse-fridge-repair/">Westinghouse</a></li>
                         <li><a href="/fisher-paykel-fridge-repair/">Fisher & Paykel</a></li>
-                        <li><a href="/#brands">Electrolux</a></li>
+                        <li><a href="/electrolux-fridge-repair/">Electrolux</a></li>
                         <li><a href="/#brands">Bosch</a></li>
                     </ul>
                     <ul style="flex: 1; min-width: 100px;">
