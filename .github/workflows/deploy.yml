@@ -50,6 +50,7 @@ jobs:
             README.md
             CLAUDE.md
             tests/**
+            admin/config.php
 
   smoke-test:
     name: Check the live site after deploy
