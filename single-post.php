@@ -5,7 +5,9 @@
  * search engines receive the real title, meta description, canonical tag,
  * a single H1, and the full article text without needing JavaScript.
  */
+define('SKIP_SESSION', true);
 require __DIR__ . '/admin/config.php';
+header('Cache-Control: public, max-age=300');
 require __DIR__ . '/admin/includes/functions.php';
 
 $slug = isset($_GET['post']) ? trim($_GET['post']) : '';

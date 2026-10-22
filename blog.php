@@ -4,7 +4,9 @@
  * and output as real <a href="/blog/slug"> links in the HTML so search
  * engines can crawl every post without running JavaScript.
  */
+define('SKIP_SESSION', true);
 require __DIR__ . '/admin/config.php';
+header('Cache-Control: public, max-age=300');
 require __DIR__ . '/admin/includes/functions.php';
 
 $posts = $pdo->query("SELECT * FROM blog_posts WHERE status = 'published' ORDER BY created_at DESC LIMIT 50")->fetchAll();
