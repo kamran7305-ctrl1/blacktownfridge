@@ -6,9 +6,28 @@ on:
       - Main
   workflow_dispatch:
 
+# Never run two deployments at the same time
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: false
+
 jobs:
+  checks:
+    name: SEO and PHP checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Make sure PHP is available for the syntax check
+        run: command -v php >/dev/null || (sudo apt-get update && sudo apt-get install -y php-cli)
+
+      - name: Run SEO, schema, routing and PHP syntax checks
+        run: python3 tests/seo_check.py
+
   deploy:
     name: Upload site files via FTP
+    needs: checks
     runs-on: ubuntu-latest
     steps:
       - name: Get latest code
@@ -29,3 +48,18 @@ jobs:
             **/.git*/**
             **/.github/**
             README.md
+            CLAUDE.md
+            tests/**
+
+  smoke-test:
+    name: Check the live site after deploy
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Wait briefly for the host, then test live URLs
+        run: |
+          sleep 20
+          python3 tests/smoke_live.py https://fridgerepairblacktown.com.au

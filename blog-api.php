@@ -7,6 +7,7 @@
  * GET blog-api.php?limit=5      -> limit how many are returned (default 50, max 50)
  * GET blog-api.php?slug=my-post -> a single published post by slug
  */
+define('SKIP_SESSION', true);
 require __DIR__ . '/admin/config.php';
 require __DIR__ . '/admin/includes/functions.php';
 

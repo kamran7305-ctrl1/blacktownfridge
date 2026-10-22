@@ -5,7 +5,9 @@
  * search engines receive the real title, meta description, canonical tag,
  * a single H1, and the full article text without needing JavaScript.
  */
+define('SKIP_SESSION', true);
 require __DIR__ . '/admin/config.php';
+header('Cache-Control: public, max-age=300');
 require __DIR__ . '/admin/includes/functions.php';
 
 $slug = isset($_GET['post']) ? trim($_GET['post']) : '';
@@ -505,7 +507,7 @@ echo json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                         <li><a href="/samsung-fridge-repair/">Samsung</a></li>
                         <li><a href="/westinghouse-fridge-repair/">Westinghouse</a></li>
                         <li><a href="/fisher-paykel-fridge-repair/">Fisher & Paykel</a></li>
-                        <li><a href="/#brands">Electrolux</a></li>
+                        <li><a href="/electrolux-fridge-repair/">Electrolux</a></li>
                         <li><a href="/#brands">Bosch</a></li>
                     </ul>
                     <ul style="flex: 1; min-width: 100px;">

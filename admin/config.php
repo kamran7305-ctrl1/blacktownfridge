@@ -22,7 +22,9 @@ define('UPLOAD_URL_GALLERY', 'uploads/gallery');
 define('UPLOAD_URL_BLOG', 'uploads/blog');
 
 // ---- Session ----
-if (session_status() === PHP_SESSION_NONE) {
+// Public pages (blog, sitemap, blog API) define SKIP_SESSION so crawlers and
+// visitors do not get a PHPSESSID cookie and no-store cache headers.
+if (!defined('SKIP_SESSION') && session_status() === PHP_SESSION_NONE) {
     session_set_cookie_params([
         'lifetime' => 0,
         'path' => '/',

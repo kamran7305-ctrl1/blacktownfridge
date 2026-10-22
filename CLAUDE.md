@@ -28,13 +28,13 @@ Owner quick note (Roman Urdu): Claude Code ko sirf page ka naam, URL, primary ke
 ## 2. Hosting, repo and deploy
 
 - Repo: `kamran7305-ctrl1/blacktownfridge`. Live branch: **`Main`** (capital M, default).
-- Merging to `Main` runs GitHub Actions "Deploy to Hostinger (FTP)" (`.github/workflows/deploy.yml`, SamKirkland FTP-Deploy-Action) which uploads the whole repo to `public_html` on Hostinger. There is no build step.
+- Merging to `Main` runs GitHub Actions "Deploy to Hostinger (FTP)" (`.github/workflows/deploy.yml`). Three jobs run in order: `checks` (`python3 tests/seo_check.py`: PHP syntax, unique titles and descriptions, canonicals, schema, FAQ match, links, sitemap), `deploy` (SamKirkland FTP-Deploy-Action uploads the repo to `public_html`, excluding `.github`, `tests`, `CLAUDE.md` and `README.md`) and `smoke-test` (`tests/smoke_live.py` fetches every sitemap URL on the live site). If `checks` fails, nothing is deployed. Run `python3 tests/seo_check.py` before every push.
 - FTP credentials are GitHub Secrets (`FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`). Never write them in chat, files or commits.
 - **Rules:**
   1. Never push to `Main` directly.
   2. For every task create a branch `claude/<task-name>` from an up-to-date `Main`, commit there.
   3. When the work is done, always open a Pull Request **against `Main`** (a PR against any other branch does not publish the site).
-  4. End every task by giving the owner the PR link and telling them to merge it, then open the Actions tab and wait for the green tick, then check the live URL and `/sitemap.xml`.
+  4. End every task by giving the owner the PR link and telling them to merge it, then open the Actions tab and wait for the green tick on all three jobs (checks, deploy, smoke-test), then check the live URL and `/sitemap.xml`.
   5. Commit messages end with the attribution lines the session tells you to use.
 
 ## 3. Repo structure (static HTML and PHP at the root, no framework)
@@ -50,7 +50,8 @@ single-post.php                     /blog/<slug>  (single post, adds BlogPosting
 404.php                             404 page (full header and footer)
 blog-api.php                        public JSON endpoint for published posts (MySQL)
 send_mail.php                       contact form handler (POST: name, email, country_code, phone, message)
-sitemap.xml  robots.txt  .htaccess
+sitemap.php  sitemap-static.xml  robots.txt  .htaccess
+tests/                              seo_check.py (runs before every deploy), smoke_live.py (runs after deploy)
 images/                             logo.webp, heroimage1.png, blacktown.webp, blacktownImage.webp,
                                     bookyourblacktownfridge.webp, emergency.jpeg, emergencyimage.webp, show1-5.jpeg
 admin/                              PHP + MySQL admin (gallery, blog posts, testimonials). See admin/README.md
@@ -134,7 +135,7 @@ Every page carries the same inline `<style>` block from `index.html` (global `fr
 2. Do the competitor research (section 6) and write the content (human, unique, semantic).
 3. `git checkout Main && git pull && git checkout -b claude/<task-name>`.
 4. Build `<slug>.html` from the template method in section 5, with meta and JSON-LD from section 7.
-5. Add the `.htaccess` RewriteRule (keep CRLF). Add the URL to `sitemap.xml` (same format as the others: `<changefreq>monthly</changefreq>`, `<priority>0.8</priority>`).
+5. Add the `.htaccess` RewriteRule (keep CRLF). Add the URL to `sitemap-static.xml` (same format as the others: `<changefreq>monthly</changefreq>`, `<priority>0.8</priority>`). `/sitemap.xml` is generated from that file by `sitemap.php`, which adds `lastmod` and the published blog posts. Never edit or recreate a static `sitemap.xml`.
 6. Add the menu and footer links on every page (section 8), preserving line endings.
 7. Verify: page renders at 1366 px and 390 px with no console errors and no horizontal scroll; JSON-LD parses and FAQ schema matches visible FAQs; no em dashes, no "ARC", no `[PLACEHOLDER]`; sitemap parses as XML; all internal hrefs resolve to existing files or routes.
 8. Commit, push the branch, open a PR **against `Main`**, give the owner the PR link, and remind them to merge and check the Actions tab green tick and the live URL.
@@ -145,7 +146,7 @@ Every page carries the same inline `<style>` block from `index.html` (global `fr
 ## 10. Known issues to confirm with the owner (do not fix silently)
 
 - `send_mail.php` sends quote requests to **info@fastfridgerepairs.com.au**, which looks like another business's domain. The site's own address is info@fridgerepairblacktown.com.au. Ask the owner which is correct before changing it.
-- `commercial-fridge-repair-blacktown.html` and `freezer-repair-blacktown.html` on `Main` still contain `[ARC LICENCE NUMBER]` placeholders and ARC wording, which breaks the "no ARC, no placeholders" rules. Offer to clean these up in a separate branch and PR.
+- (Resolved 19 Oct 2026) ARC placeholders and wording were removed from the commercial and freezer pages. `tests/seo_check.py` now fails on unfilled `[CONFIRM]`, `[PHONE]` and `[ARC]` placeholders.
 - `heroimageMob.webp` and `heroimageTab.webp` are referenced by `index.html` but are not in `images/`.
 - `admin/config.php` has placeholder database credentials and the seeded admin login must be changed on the live server. Never commit real credentials.
 - Phone number, street address, ARC or licence number, reviews and Google Business Profile details are not yet published. Ask the owner before adding any of them to the site or the schema.
@@ -208,3 +209,14 @@ Full file: `.github/seo/Competitor_Analysis_and_Content_Playbook.md` (Part A ana
 **Where the playbook and this file differ, this file wins until the owner says otherwise:** the playbook allows naming ARCtick and a licence number, but section 1 says never mention ARC. The playbook says to confirm "30 years", "licensed" and "OEM parts" first; section 1 already lists years and licensed technicians as confirmed, so use them, and avoid claiming OEM or genuine parts.
 
 **Open owner items from the playbook:** phone number, ABN, licence number, street address or service-area setting, real reviews, named technicians, real job photos, and Google Business Profile details.
+
+## 15. Technical SEO rules (22 Oct 2026 audit): do not undo
+
+Full report: `.github/seo/Technical_SEO_Audit_2026-10-22.md`. Rules that came out of it:
+
+- **One URL per page.** Landing pages live at `/slug/` with a trailing slash. `.htaccess` 301-redirects `/slug` and `/slug.html` to `/slug/`. Blog posts live at `/blog/slug` with no trailing slash (`/blog/slug/` redirects to it). Canonical tags, the sitemap and internal links must always use these forms.
+- **Real 404s.** `ErrorDocument 404 /404.php` is set and `404.php` sends a 404 status. Never turn a missing page into a 200 or a redirect to the homepage.
+- **Public PHP pages must not start a session.** `blog.php`, `single-post.php`, `blog-api.php` and `sitemap.php` define `SKIP_SESSION` before requiring `admin/config.php`. Without it, PHP sends a `PHPSESSID` cookie and `Cache-Control: no-store` on every public page. Do the same for any new public PHP page. Only admin pages should use sessions.
+- **Sitemap.** `sitemap.php` serves `/sitemap.xml` and falls back to the static pages if the database is down. `sitemap-static.xml` is not public. Add new pages there.
+- **Nothing private on the web root.** `.sql` and `.md` files are denied in `.htaccess`, and `CLAUDE.md`, `tests/` and `.github/` are not uploaded. Never commit credentials.
+- **Hosting tasks only the owner can do** (Hostinger hPanel): turn on Force HTTPS, confirm `www` redirects to the non-www domain, and in Search Console submit `https://fridgerepairblacktown.com.au/sitemap.xml`.
