@@ -188,6 +188,7 @@ if (!headers_sent() && http_response_code() !== 404) {
                             <li><a href="/ice-machine-repair/">Ice Machine Repair</a></li>
                             <li><a href="/coolroom-repair/">Coolroom Repair</a></li>
                             <li><a href="/mobile-fridge-repair/">Mobile Fridge Repair</a></li>
+                            <li><a href="/fridge-door-seal-replacement/">Fridge Door Seal</a></li>
                             <li><a href="/freezer-repair-blacktown/">Freezer Repair</a></li>
                             <li><a href="/emergency-fridge-repair/">Emergency Fridge Repair</a></li>
                             <li><a href="/#services">View All Services</a></li>
@@ -238,6 +239,7 @@ if (!headers_sent() && http_response_code() !== 404) {
                     <li><a href="/freezer-repair-blacktown/">Freezer Repairs</a></li>
                     <li><a href="/coolroom-repair/">Coolroom Repairs</a></li>
                     <li><a href="/fridge-regas/">Fridge Regassing</a></li>
+                    <li><a href="/fridge-door-seal-replacement/">Fridge Door Seal</a></li>
                     <li><a href="/mobile-fridge-repair/">Mobile Fridge Repair</a></li>
                     <li><a href="/ice-machine-repair/">Ice Machine Repair</a></li>
                     <li><a href="/#services">Display Fridge Repairs</a></li>

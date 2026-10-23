@@ -220,3 +220,13 @@ Full report: `.github/seo/Technical_SEO_Audit_2026-10-22.md`. Rules that came ou
 - **Sitemap.** `sitemap.php` serves `/sitemap.xml` and falls back to the static pages if the database is down. `sitemap-static.xml` is not public. Add new pages there.
 - **Nothing private on the web root.** `.sql` and `.md` files are denied in `.htaccess`, and `CLAUDE.md`, `tests/` and `.github/` are not uploaded. Never commit credentials.
 - **Hosting tasks only the owner can do** (Hostinger hPanel): turn on Force HTTPS, confirm `www` redirects to the non-www domain, and in Search Console submit `https://fridgerepairblacktown.com.au/sitemap.xml`.
+
+## 16. Claude Code automations (22 Oct 2026)
+
+Project setup lives in `.claude/` and `.mcp.json` (excluded from the website upload):
+
+- **Skill `/new-page [url]`** (`.claude/skills/new-page/`): the full next-page workflow, with `build.py`, the page generator and the `.htaccess`, sitemap, menu and footer wiring. User-invoked only.
+- **Skill `/seo-check`**: runs `tests/seo_check.py` and fixes failures.
+- **Subagent `seo-reviewer`** (`.claude/agents/`): independent review of a page against sections 1, 6, 7, 14 and 15 before the PR. Use it after building a page.
+- **Hooks** (`.claude/settings.json`): `protect_files.py` denies edits to `sitemap.xml` and asks before `admin/config.php` or `send_mail.php`; `run_seo_check.py` runs the SEO check after an edit to a root page, `.htaccess` or `sitemap-static.xml` and returns failures to Claude. Hooks fire on Edit and Write only, not on scripts run through Bash, so still run `python3 tests/seo_check.py` before every push. During a multi-file build the check can fail until every file is updated; finish the build, then fix anything left.
+- **MCP `playwright`** (`.mcp.json`): browser checks at 1366 px and 390 px. Needs `npx` and a browser on the machine; not tested in this cloud session.

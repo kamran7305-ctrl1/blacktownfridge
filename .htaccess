@@ -52,6 +52,9 @@ RewriteRule ^fridge-not-cooling-repair/?$ fridge-not-cooling-repair.html [L]
 # Allow the Fridge Regas landing page to work without .html extension
 RewriteRule ^fridge-regas/?$ fridge-regas.html [L]
 
+# Allow the Fridge Door Seal landing page to work without .html extension
+RewriteRule ^fridge-door-seal-replacement/?$ fridge-door-seal-replacement.html [L]
+
 # Allow the Electrolux Fridge Repair landing page to work without .html extension
 RewriteRule ^electrolux-fridge-repair/?$ electrolux-fridge-repair.html [L]
 

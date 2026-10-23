@@ -51,6 +51,8 @@ jobs:
             CLAUDE.md
             tests/**
             admin/config.php
+            .claude/**
+            .mcp.json
 
   smoke-test:
     name: Check the live site after deploy
