@@ -52,6 +52,9 @@ RewriteRule ^fridge-not-cooling-repair/?$ fridge-not-cooling-repair.html [L]
 # Allow the Fridge Regas landing page to work without .html extension
 RewriteRule ^fridge-regas/?$ fridge-regas.html [L]
 
+# Allow the Fridge Compressor Repair landing page to work without .html extension
+RewriteRule ^fridge-compressor-repair/?$ fridge-compressor-repair.html [L]
+
 # Allow the Bar Fridge Repair landing page to work without .html extension
 RewriteRule ^bar-fridge-repair/?$ bar-fridge-repair.html [L]
 
